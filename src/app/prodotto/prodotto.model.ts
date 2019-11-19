@@ -16,7 +16,7 @@ export class Prodotto {
   }
 
   get getData(): string {
-    return this.dataScadenza.getFullYear() + '-' + this.dataScadenza.getMonth() + '-' + this.dataScadenza.getDate()
+    return this.dataScadenza.getFullYear() + '-' + (this.dataScadenza.getMonth() + 1) + '-' + this.dataScadenza.getDate()
   }
 
   get isScaduto(): boolean {
