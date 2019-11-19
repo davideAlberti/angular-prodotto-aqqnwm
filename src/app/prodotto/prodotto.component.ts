@@ -13,6 +13,6 @@ export class ProdottoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.prodotto = new Prodotto('P1', 'Mozzarella di bufala IGP', 2.56, new Date('2019-11-30'), 24)
+    this.prodotto = new Prodotto('P1', 'Mozzarella di bufala IGP', 2.56, new Date('2019-12-20'), 24)
   }
 }

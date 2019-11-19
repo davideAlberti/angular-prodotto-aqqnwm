@@ -1,9 +1,19 @@
 <div class="container">
   <div class="row">
-    <p class="lead" [ngStyle]="{'color': prodotto.getColor}">{{ prodotto.nome }}</p>
-  </div>
-  <div class="row">
-    <p class="lead" *ngIf="prodotto.isScaduto" style="color: red">Scaduto</p>
+    <div class="col-10">
+      <p class="lead" [ngStyle]="{'color': prodotto.getColor}">{{ prodotto.nome }}</p>
+    </div>
+     
+    <div class="col-2">
+      <span class="badge badge-danger" *ngIf="prodotto.isScaduto; else elseTemplate">Scaduto</span>
+      <ng-template #elseTemplate>
+        <span class="badge badge-warning">
+          <span>Scade tra {{ prodotto.getGiorniScadenza }} </span>
+          <span *ngIf="prodotto.getGiorniScadenza == 1; else">giorno</span>
+          <span *ngIf="prodotto.getGiorniScadenza != 1; else">giorni</span>
+        </span>
+      </ng-template>
+    </div>
   </div>
 
 	<div class="form-group">
