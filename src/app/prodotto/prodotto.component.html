@@ -20,18 +20,22 @@
 		<label for="codiceInput">Codice prodotto</label>
 		<input type="text" class="form-control" id="codiceInput" placeholder="Inseririe il codice" [(ngModel)]="prodotto.codice">
   </div>
+
   <div class="form-group">
 		<label for="nomeInput">Nome prodotto</label>
 		<input type="text" class="form-control" id="nomeInput" placeholder="Inseririe il nome del prodotto" [(ngModel)]="prodotto.nome">
   </div>
+
   <div class="form-group">
 		<label for="prezzoInput">Prezzo</label>
 		<input type="text" class="form-control" id="prezzoInput" placeholder="Inseririe il prezzo del prodotto" [(ngModel)]="prodotto.prezzo">
   </div>
+
   <div class="form-group">
-		<label for="dataScadenzaInput">Data di scadenza</label>
-		<input type="date" class="form-control" id="dataScadenzaInput" placeholder="Inseririe la data di scadenza" [value]="prodotto.getData">
-  </div>  
+    <label for="scadenzaInput">Data di scadenza</label>
+    <input type="date" class="form-control" id="scadenzaInput" [(ngModel)]="prodotto.formatDate">
+  </div>
+
   <div class="form-group">
 		<label for="quantitaInput">Quantità presente in magazzino</label>
 		<input type="text" class="form-control" id="quantitaInput" placeholder="Inseririe la quantità presente in magazzino" [(ngModel)]="prodotto.quantita">

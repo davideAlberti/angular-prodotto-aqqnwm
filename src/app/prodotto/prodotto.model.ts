@@ -15,10 +15,6 @@ export class Prodotto {
     this.quantita = quantita
   }
 
-  get getData(): string {
-    return this.dataScadenza.getFullYear() + '-' + (this.dataScadenza.getMonth() + 1) + '-' + this.dataScadenza.getDate()
-  }
-
   get isScaduto(): boolean {
     return this.dataScadenza < new Date()
   }
@@ -36,5 +32,15 @@ export class Prodotto {
     let dt1 = new Date(date1);
     let dt2 = new Date(date2);
     return Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) / (1000 * 60 * 60 * 24));
+  }
+
+  get formatDate() {
+    return this.dataScadenza.toISOString().substring(0, 10);
+  }
+
+  set formatDate(text: any){
+    let elem = text.split('-');
+    let d = new Date(Date.UTC(elem[0], elem[1]-1, elem[2]));
+    this.dataScadenza.setFullYear(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
   }
 }
