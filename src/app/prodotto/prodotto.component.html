@@ -9,11 +9,11 @@
   </div>
 	<div class="form-group">
 		<label for="codiceInput">Codice prodotto</label>
-		<input type="text" class="form-control" id="codiceInput" placeholder="Inseririe il codice" [value]="prodotto.codice" #codiceInput>
+		<input type="text" class="form-control" id="codiceInput" placeholder="Inseririe il codice" [value]="prodotto.codice" #codiceInput (keydown)="prodottoCambiato = true" [ngClass]="{'error': codiceError}">
   </div>
   <div class="form-group">
 		<label for="nomeInput">Nome prodotto</label>
-		<input type="text" class="form-control" id="nomeInput" placeholder="Inseririe il nome del prodotto" [value]="prodotto.nome" #nomeInput>
+		<input type="text" class="form-control" id="nomeInput" placeholder="Inseririe il nome del prodotto" [value]="prodotto.nome" #nomeInput (keydown)="prodottoCambiato = true" [ngClass]="{'error': nomeError}"> 
   </div>
   <div class="form-group">
 		<label for="prezzoInput">Prezzo</label>
@@ -21,19 +21,23 @@
      <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroupPrepend">€</span>
       </div>
-		<input type="number" class="form-control" id="prezzoInput" placeholder="Inseririe il prezzo del prodotto" [value]="prodotto.prezzo" #prezzoInput>
+		<input type="number" class="form-control" id="prezzoInput" placeholder="Inseririe il prezzo del prodotto" [value]="prodotto.prezzo" #prezzoInput (keydown)="prodottoCambiato = true" [ngClass]="{'error': prezzoError}">
     </div>
   </div>
   <div class="form-group">
 		<label for="dataScadenzaInput">Data di scadenza</label>
-		<input type="date" class="form-control" id="dataScadenzaInput" placeholder="Inseririe la data di scadenza" [value]="prodotto.DataScadenza" #dataScadenzaInput>
+		<input type="date" class="form-control" id="dataScadenzaInput" placeholder="Inseririe la data di scadenza" [value]="prodotto.DataScadenza" #dataScadenzaInput (keydown)="prodottoCambiato = true" (change)="prodottoCambiato = true" [ngClass]="{'error': dataScadenzaError}">
   </div>  
   <div class="form-group">
 		<label for="quantitaInput">Quantità presente in magazzino</label>
-		<input type="text" class="form-control" id="quantitaInput" placeholder="Inseririe la quantità presente in magazzino" [value]="prodotto.quantita" #quantitaInput>
+		<input type="text" class="form-control" id="quantitaInput" placeholder="Inseririe la quantità presente in magazzino" [value]="prodotto.quantita" #quantitaInput (keydown)="prodottoCambiato = true" [ngClass]="{'error': quantitaError}">
   </div>
-  <div class="row">
-    <button class="btn btn-danger" (click)="reset()">Annulla</button>
-    <button class="btn btn-primary" (click)="save($event)">Salva</button>
+  <div class="row" *ngIf="prodottoCambiato">
+    <div class="col-6 text-left">
+      <button class="btn btn-danger" (click)="reset()">Annulla</button>
+    </div>
+    <div class="col-6 text-right">
+      <button class="btn btn-primary" (click)="save($event)">Salva</button>
+    </div>
   </div>
 </div>
