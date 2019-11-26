@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h4>{{fornitore.nome}}</h4>
+    </div>
+  </div>
+	<div class="form-group">
+		<label for="nomeInput">Nome azienda</label>
+		<input type="text" class="form-control" id="nomeInput" placeholder="Inseririe il codice" [value]="fornitore.nome" #nomeInput>
+  </div>
+  <div class="form-group">
+		<label for="sedeInput">Sede azienda</label>
+		<input type="text" class="form-control" id="sedeInput" placeholder="Inseririe il nome del prodotto" [value]="fornitore.sede" #sedeInput > 
+  </div>
+  <div class="form-group">
+		<label for="dataScadenzaInput">Sito web</label>
+		<input type="url" class="form-control" id="dataScadenzaInput" placeholder="Inseririe la data di scadenza" [value]="prodotto.DataScadenza" #sitowebInput >
+  </div>  
+  <div class="form-group">
+		<label for="quantitaInput">Quantità presente in magazzino</label>
+		<input type="text" class="form-control" id="quantitaInput" placeholder="Inseririe la quantità presente in magazzino" [value]="prodotto.quantita" #quantitaInput>
+  </div>
+  <div class="row" *ngIf="prodottoCambiato">
+    <div class="col-6 text-left">
+      <button class="btn btn-danger" (click)="reset()">Annulla</button>
+    </div>
+    <div class="col-6 text-right">
+      <button class="btn btn-primary" (click)="save($event)">Salva</button>
+    </div>
+  </div>
+</div>
+
+
+
+sitoWeb: string
+  mail: string
+  telefono: string
+  partitaIVA: string
+  prodotto: string

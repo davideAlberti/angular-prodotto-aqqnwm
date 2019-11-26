@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Fornitore } from '../fornitore/fornitore.model';
 
 @Component({
   selector: 'app-fornitori',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fornitori.component.css']
 })
 export class FornitoriComponent implements OnInit {
+
+  fornitori: Fornitore[]
 
   constructor() { }
 

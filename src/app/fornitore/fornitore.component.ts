@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Fornitore } from './fornitore.model';
 
 @Component({
   selector: 'app-fornitore',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fornitore.component.css']
 })
 export class FornitoreComponent implements OnInit {
+
+  @Input() fornitore: Fornitore
 
   constructor() { }
 
