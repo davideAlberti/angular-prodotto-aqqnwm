@@ -15,7 +15,7 @@ export class ProdottoComponent implements OnInit {
   ngOnInit() {
   }
 
-  save() {
-    
+  save(evento: MouseEvent) {
+    console.log(evento)
   }
 }
