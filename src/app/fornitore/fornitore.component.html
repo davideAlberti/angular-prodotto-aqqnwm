@@ -12,10 +12,20 @@
 		<label for="sedeInput">Sede azienda</label>
 		<input type="text" class="form-control" id="sedeInput" placeholder="Inseririe l'indirizzo della sede" [value]="fornitore.sede" #sedeInput (keydown)="fornitoreCambiato = true" [ngClass]="{'error': sedeError}"> 
   </div>
+
   <div class="form-group">
-		<label for="sitowebInput">Sito web</label>
-		<input type="url" class="form-control" id="sitowebInput" placeholder="Inseririe il sitoweb" [value]="fornitore.sitoWeb" #sitowebInput (keydown)="fornitoreCambiato = true" [ngClass]="{'error': sitoError}">
-  </div>  
+    <label for="sitowebInput">Sito web</label>
+    <div class="input-group mb-3">
+
+       <input type="url" class="form-control" id="sitowebInput" placeholder="Inseririe il sitoweb" [value]="fornitore.sitoWeb" #sitowebInput (keydown)="fornitoreCambiato = true" [ngClass]="{'error': sitoError}">
+      <div class="input-group-append">
+        <span class="input-group-text">
+          <a [href]="fornitore.sitoWeb" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg></a>
+        </span>
+      </div>
+    </div>
+  </div>
+
   <div class="form-group">
 		<label for="emailInput">Email</label>
 		<input type="email" class="form-control" id="emailInput" placeholder="Inseririe l'email" [value]="fornitore.mail" #emailInput (keydown)="fornitoreCambiato = true" [ngClass]="{'error': emailError}">
