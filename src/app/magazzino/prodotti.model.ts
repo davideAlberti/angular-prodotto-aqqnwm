@@ -19,7 +19,7 @@ export class Prodotti {
     this.prodotti.push(item)
   }
 
-  get getLastIndex() {
+  getLastIndex() {
     return this.prodotti.length - 1;
   }
 }
