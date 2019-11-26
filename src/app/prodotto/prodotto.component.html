@@ -9,11 +9,11 @@
   </div>
 	<div class="form-group">
 		<label for="codiceInput">Codice prodotto</label>
-		<input type="text" class="form-control" id="codiceInput" placeholder="Inseririe il codice" [(ngModel)]="prodotto.codice">
+		<input type="text" class="form-control" id="codiceInput" placeholder="Inseririe il codice" [value]="prodotto.codice">
   </div>
   <div class="form-group">
 		<label for="nomeInput">Nome prodotto</label>
-		<input type="text" class="form-control" id="nomeInput" placeholder="Inseririe il nome del prodotto" [(ngModel)]="prodotto.nome">
+		<input type="text" class="form-control" id="nomeInput" placeholder="Inseririe il nome del prodotto" [value]="prodotto.nome">
   </div>
   <div class="form-group">
 		<label for="prezzoInput">Prezzo</label>
@@ -21,15 +21,19 @@
      <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroupPrepend">€</span>
       </div>
-		<input type="number" class="form-control" id="prezzoInput" placeholder="Inseririe il prezzo del prodotto" [(ngModel)]="prodotto.prezzo">
+		<input type="number" class="form-control" id="prezzoInput" placeholder="Inseririe il prezzo del prodotto" [value]="prodotto.prezzo">
     </div>
   </div>
   <div class="form-group">
 		<label for="dataScadenzaInput">Data di scadenza</label>
-		<input type="date" class="form-control" id="dataScadenzaInput" placeholder="Inseririe la data di scadenza" [(ngModel)]="prodotto.DataScadenza">
+		<input type="date" class="form-control" id="dataScadenzaInput" placeholder="Inseririe la data di scadenza" [value]="prodotto.DataScadenza">
   </div>  
   <div class="form-group">
 		<label for="quantitaInput">Quantità presente in magazzino</label>
-		<input type="text" class="form-control" id="quantitaInput" placeholder="Inseririe la quantità presente in magazzino" [(ngModel)]="prodotto.quantita">
+		<input type="text" class="form-control" id="quantitaInput" placeholder="Inseririe la quantità presente in magazzino" [value]="prodotto.quantita">
+  </div>
+  <div class="row">
+    <button class="btn btn-danger" (click)="reset()">Annulla</button>
+    <button class="btn btn-primary" (click)="save()">Salva</button>
   </div>
 </div>

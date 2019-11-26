@@ -14,4 +14,8 @@ export class ProdottoComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  save() {
+    
+  }
 }
