@@ -6,34 +6,34 @@
   </div>
 	<div class="form-group">
 		<label for="nomeInput">Nome azienda</label>
-		<input type="text" class="form-control" id="nomeInput" placeholder="Inseririe il codice" [value]="fornitore.nome" #nomeInput>
+		<input type="text" class="form-control" id="nomeInput" placeholder="Inseririe il nome" [value]="fornitore.nome" #nomeInput (keydown)="fornitoreCambiato = true" [ngClass]="{'error': nomeError}">
   </div>
   <div class="form-group">
 		<label for="sedeInput">Sede azienda</label>
-		<input type="text" class="form-control" id="sedeInput" placeholder="Inseririe il nome del prodotto" [value]="fornitore.sede" #sedeInput > 
+		<input type="text" class="form-control" id="sedeInput" placeholder="Inseririe l'indirizzo della sede" [value]="fornitore.sede" #sedeInput (keydown)="fornitoreCambiato = true" [ngClass]="{'error': sedeError}"> 
   </div>
   <div class="form-group">
-		<label for="dataScadenzaInput">Sito web</label>
-		<input type="url" class="form-control" id="dataScadenzaInput" placeholder="Inseririe la data di scadenza" [value]="prodotto.DataScadenza" #sitowebInput >
+		<label for="sitowebInput">Sito web</label>
+		<input type="url" class="form-control" id="sitowebInput" placeholder="Inseririe il sitoweb" [value]="fornitore.sitoWeb" #sitowebInput (keydown)="fornitoreCambiato = true" [ngClass]="{'error': sitoError}">
   </div>  
   <div class="form-group">
-		<label for="quantitaInput">Quantità presente in magazzino</label>
-		<input type="text" class="form-control" id="quantitaInput" placeholder="Inseririe la quantità presente in magazzino" [value]="prodotto.quantita" #quantitaInput>
+		<label for="emailInput">Email</label>
+		<input type="email" class="form-control" id="emailInput" placeholder="Inseririe l'email" [value]="fornitore.mail" #emailInput (keydown)="fornitoreCambiato = true" [ngClass]="{'error': emailError}">
   </div>
-  <div class="row" *ngIf="prodottoCambiato">
+  <div class="form-group">
+		<label for="telefonoInput">Telefono</label>
+		<input type="tel" class="form-control" id="telefonoInput" placeholder="Inseririe il numero di telefono" [value]="fornitore.telefono" #telefonoInput (keydown)="fornitoreCambiato = true" [ngClass]="{'error': telefonoError}">
+  </div>
+  <div class="form-group">
+		<label for="ivaInput">Partita IVA</label>
+		<input type="text" class="form-control" id="ivaInput" placeholder="Inseririe la partita IVA" [value]="fornitore.partitaIVA" #ivaInput (keydown)="fornitoreCambiato = true" [ngClass]="{'error': ivaError}">
+  </div>
+  <div class="row" *ngIf="fornitoreCambiato">
     <div class="col-6 text-left">
       <button class="btn btn-danger" (click)="reset()">Annulla</button>
     </div>
     <div class="col-6 text-right">
-      <button class="btn btn-primary" (click)="save($event)">Salva</button>
+      <button class="btn btn-primary" (click)="save()">Salva</button>
     </div>
   </div>
 </div>
-
-
-
-sitoWeb: string
-  mail: string
-  telefono: string
-  partitaIVA: string
-  prodotto: string

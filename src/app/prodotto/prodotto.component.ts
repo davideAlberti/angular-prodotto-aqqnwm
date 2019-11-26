@@ -29,19 +29,34 @@ export class ProdottoComponent implements OnInit {
 
   save() {
     if(this.codiceInput.nativeElement.value == '') this.codiceError = true
-    else this.prodotto.codice = this.codiceInput.nativeElement.value
+    else {
+      this.prodotto.codice = this.codiceInput.nativeElement.value
+      this.codiceError = false
+    }
     
     if(this.nomeInput.nativeElement.value == '') this.nomeError = true
-    else this.prodotto.nome = this.nomeInput.nativeElement.value
+    else {
+      this.prodotto.nome = this.nomeInput.nativeElement.value
+      this.nomeError = false
+    }
 
     if(this.prezzoInput.nativeElement.value == 0) this.prezzoError = true
-    else this.prodotto.prezzo = this.prezzoInput.nativeElement.value
+    else {
+      this.prodotto.prezzo = this.prezzoInput.nativeElement.value
+      this.prezzoError = false
+    }
 
     if(this.dataScadenzaInput.nativeElement.value == '') this.dataScadenzaError = true
-    else this.prodotto.dataScadenza = new Date(this.dataScadenzaInput.nativeElement.value)
+    else {
+      this.prodotto.dataScadenza = new Date(this.dataScadenzaInput.nativeElement.value)
+      this.dataScadenzaError = false
+    }
 
     if(this.quantitaInput.nativeElement.value == '') this.quantitaError = true
-    else this.prodotto.quantita = this.quantitaInput.nativeElement.value
+    else {
+      this.prodotto.quantita = this.quantitaInput.nativeElement.value
+      this.quantitaError = false
+    }
 
     this.prodottoCombiato = false;
   }
