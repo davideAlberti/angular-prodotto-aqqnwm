@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { Prodotto } from './prodotto.model';
 
 @Component({
@@ -9,6 +9,11 @@ import { Prodotto } from './prodotto.model';
 export class ProdottoComponent implements OnInit {
 
   @Input() prodotto: Prodotto
+  @ViewChild('codiceInput', {static: true}) codiceInput: ElementRef
+  @ViewChild('nomeInput', {static: true}) nomeInput: ElementRef
+  @ViewChild('prezzoInput', {static: true}) prezzoInput: ElementRef
+  @ViewChild('dataScadenzaInput', {static: true}) dataScadenzaInput: ElementRef
+  @ViewChild('quantitaInput', {static: true}) quantitaInput: ElementRef
 
   constructor() { }
 
@@ -16,6 +21,8 @@ export class ProdottoComponent implements OnInit {
   }
 
   save(evento: MouseEvent) {
-    console.log(evento)
+    var elementoHTML: HTMLInputElement = this.codiceInput.nativeElement
+
+    console.log(elementoHTML.value)
   }
 }
