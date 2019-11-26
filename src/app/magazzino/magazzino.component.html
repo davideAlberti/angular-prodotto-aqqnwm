@@ -1,32 +1,22 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-4">
-      <button class="btn btn-primary btn-block"
-      (click)="addNuovoProdotto()"
-      >Aggiungi</button>
-      <br>
+			<button class="btn btn-primary btn-block" (click)="addNuovoProdotto()" >Aggiungi</button>
+			<br>
 			<div class="list-group">
-				<button type="button" class="list-group-item list-group-item-action  d-flex justify-content-between align-items-center" 
-        *ngFor="let prodotto of prodotti.getItems(); let i = index"
-        (click)="setCorrente(i)"
-        [ngClass]="{'active':corrente==i}"
-        ><div *ngIf="prodotto.nome != ''; else nuovoProdotto">{{prodotto.nome}}</div>
-        <ng-template #nuovoProdotto>Nuovo</ng-template>
-        <div>
-        <span class="badge badge-danger" *ngIf="prodotto.daAcquistare()">ACQ</span>
-        &nbsp;
-        <span class="badge" 
-      [ngClass]="{'badge-danger': prodotto.giorniAScadenza() <= 0, 'badge-warning': prodotto.giorniAScadenza() > 0 && prodotto.giorniAScadenza() < 7, 'badge-success' : prodotto.giorniAScadenza() >= 7}"
-      >{{prodotto.getScadenzaShortLabel()}}</span>
-      </div>
+        <button type="button" class="list-group-item list-group-item-action  d-flex justify-content-between align-items-center" *ngFor="let prodotto of prodotti.getItems(); let i = index" (click)="setCorrente(i)" [ngClass]="{'active':corrente==i}"><div *ngIf="prodotto.nome != ''; else nuovoProdotto">{{prodotto.nome}}</div>
+          <ng-template #nuovoProdotto>Nuovo</ng-template>
+          <div>
+            <span class="badge badge-danger" *ngIf="prodotto.daAcquistare()">ACQ</span>
+            &nbsp;
+            <span class="badge" [ngClass]="{'badge-danger': prodotto.giorniAScadenza() <= 0, 'badge-warning': prodotto.giorniAScadenza() > 0 && prodotto.giorniAScadenza() < 7, 'badge-success' : prodotto.giorniAScadenza() >= 7}">{{prodotto.getScadenzaShortLabel()}}</span>
+          </div>
         </button>
-			</div>      
-      <hr />
+			</div>
+			<hr />
 		</div>
-    <div class="col-sm-8">
-      <app-prodotto [prodotto]="prodotti.getItem(corrente)"
-      *ngIf="prodotti.getLastIndex()>=0"
-      ></app-prodotto>
-    </div>
+		<div class="col-sm-8">
+			<app-prodotto [prodotto]="prodotti.getItem(corrente)" *ngIf="prodotti.getLastIndex()>=0"></app-prodotto>
+		</div>
 	</div>
 </div>
