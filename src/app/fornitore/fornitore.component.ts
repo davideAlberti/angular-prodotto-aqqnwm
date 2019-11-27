@@ -28,7 +28,7 @@ export class FornitoreComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    
   }
 
   save() {
@@ -69,6 +69,8 @@ export class FornitoreComponent implements OnInit {
     }
 
     this.fornitoreCambiato = false
+    this.databaseService.saveFornitore(this.fornitore)
+    console.log(this.databaseService.getFornitori())
   }
 
   reset() {
