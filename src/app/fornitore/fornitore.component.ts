@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { Fornitore } from './fornitore.model';
+import { GMailService } from '../services/gmail.service';
 
 @Component({
   selector: 'app-fornitore',
@@ -25,9 +26,12 @@ export class FornitoreComponent implements OnInit {
   telefonoError: boolean = false
   ivaError: boolean = false
 
+  gmailService: GMailService = new GMailService(); 
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
   save() {
@@ -91,5 +95,9 @@ export class FornitoreComponent implements OnInit {
 
   private isPhoneNumber(number) {
     return !isNaN(number)
+  }
+
+  send() {
+    this.gmailService.sendMail(this.fornitore.mail, 'prova', 'ciao')
   }
 }
