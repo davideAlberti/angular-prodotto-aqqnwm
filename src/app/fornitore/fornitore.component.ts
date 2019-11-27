@@ -67,7 +67,7 @@ export class FornitoreComponent implements OnInit {
       this.ivaError = false
     }
 
-    this.fornitore = false
+    this.fornitoreCambiato = false
   }
 
   reset() {
