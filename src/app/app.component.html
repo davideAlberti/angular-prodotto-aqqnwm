@@ -6,17 +6,11 @@
 <!-- <app-magazzino></app-magazzino> -->
 
 
-<nav class="navbar navbar-light bg-light">
-  
-</nav>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" [routerLink]="['/magazzino']" routerLinkActive="active">Magazzino</a>
-      <a class="nav-item nav-link"  [routerLink]="['/fornitori']" routerLinkActive="active">Fornitori</a>
-    </div>
-  </div>
-</nav>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="nav-link" [routerLink]="['/magazzino']" routerLinkActive="active">Magazzino</a>
+    <a class="nav-link" [routerLink]="['/fornitori']" routerLinkActive="active">Fornitori</a>
+  </nav>
+</div>
 <br /><br />
 <router-outlet></router-outlet>
